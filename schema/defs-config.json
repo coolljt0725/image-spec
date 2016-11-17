@@ -8,22 +8,52 @@
           "type": "string"
         },
         "Memory": {
-          "$ref": "defs.json#/definitions/int64"
+		"oneOf":[
+		{
+          "$ref": "defs.json#/definitions/int64"},
+		{
+			"type":"null"
+		}
+	  ]
         },
         "MemorySwap": {
-          "$ref": "defs.json#/definitions/int64"
+		"oneOf":[
+		{ "$ref": "defs.json#/definitions/int64"
+		},
+		{
+		"type":"null"
+		}
+	  ]
         },
         "CpuShares": {
-          "$ref": "defs.json#/definitions/int64"
+		"oneOf":[
+		{"$ref": "defs.json#/definitions/int64"
+		},
+		{
+			                        "type":"null"
+							                }
+
+	  ]
         },
         "ExposedPorts": {
-          "$ref": "defs.json#/definitions/mapStringObject"
+		"oneOf":[
+		{
+			"$ref": "defs.json#/definitions/mapStringObject"},
+		{
+			"type":"null"
+		}
+	  ]
         },
         "Env": {
+	"oneOf": [
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+	  {
+	    "type": "null"
+	  }
+	]
         },
         "Entrypoint": {
           "oneOf": [
